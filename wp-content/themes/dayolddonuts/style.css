@@ -1,0 +1,112 @@
+/*
+Theme Name: Day Old Donuts
+Theme URI:
+Author: Andrew M McCall
+Author URI: https://andrew-mccall.com
+Description: A minimal first theme
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: day old donuts
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+#content-section {
+  width:100%;
+  margin: 10px 5px;
+  padding: 10px;
+  box-shadow: 1px 1px 1px 1px;
+}
+
+
+
+
+/*
+###################
+Navigation Menus
+##################
+*/
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.menu-primary-container {
+  display: block;
+}
+
+.menu-primary-container a, .menu-primary-container a:hover {
+  background-color: #fff;
+  color:#000;
+  display: block;
+  font-size: 1em;
+  margin: 0;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  width: 100%;
+}
+
+.menu-primary-container a:hover, .menu-primary-container a:active {
+  background-color: #000;
+  color: #fff;
+}
+
+.menu-primary-container ul {
+  margin: 0;
+  padding-left: 0;
+}
+
+.menu-primary-container ul li {
+  margin: 0;
+  padding-left: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  margin: 5px 10px;
+}
+
+@media screen and (min-width: 500px) {
+  body {
+
+  }
+
+
+
+  .menu-primary-container {
+    flex: 0 300px;
+  }
+  .menu-primary-container a, .menu-primary-container a:hover {
+    display: block;
+  }
+
+  #main-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .content-section {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 500px;
+    flex-grow: 1;
+  }
+}
