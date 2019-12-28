@@ -1,12 +1,30 @@
 <?php get_header(); ?>
+<?php if ( function_exists( 'the_custom_logo' ) ) {
+ the_custom_logo();
+} ?>
+<div class="wrapper">
+<?php get_sidebar(); ?>
 <main id="main-content">
-  <?php get_sidebar(); ?>
-  <article class="content-section">
-<h1><?php bloginfo( 'name' ); ?></h1>
+  <h1><?php bloginfo( 'name' ); ?></h1>
 <h2><?php bloginfo( 'description' ); ?></h2>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+    <article <?php post_class();?> >
   <h1><?php the_title(); ?></h1>
-  <?php the_content(); ?>
+    <?php the_content(); ?>
+    <footer class="author-byline">
+      <p>
+        Author: <a href="<?php echo get_author_posts_url($post->post_author );?>">
+          <?php the_author(); ?>
+        </a>  |
+              Date:
+              <?php the_time('M. j, Y'); ?> |
+              Categories:
+              <?php the_category( ',' ); ?> |
+              <?php the_tags( $before = null, $sep = ', ', $after = '' ); ?>
+      </p>
+    </footer>
+  </article>
 
 <?php endwhile; else: ?>
 
@@ -23,7 +41,7 @@
 						if ( $prev_post ) : ?>
 
 							<a class="post-nav-prev" href="<?php echo get_permalink( $prev_post->ID ); ?>">
-								<p>&larr; <?php _e( 'Previous post', 'dayolddonuts' ); ?></p>
+								<p>&larr; <?php _e( 'Previous post', '' ); ?></p>
 							</a>
 
 							<?php
@@ -38,8 +56,8 @@
 							<?php
 						endif;
 						?>
-            </article>
 </main>
-<?php wp_footer(); ?>
+</div>
+<?php get_footer(); ?>
 </body>
 </html>
