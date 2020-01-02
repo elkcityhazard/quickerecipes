@@ -1,7 +1,12 @@
-
 <aside class="sidebar">
-<h2>Menu</h2>
-<?php  wp_nav_menu( array(
+  <button class="button-hover">Menu</button>
+  <?php  wp_nav_menu( array(
       'menu' => 'Primary'
   ) ); ?>
+
+  <section>
+    <?php  wp_nav_menu( array(
+        'menu' => 'Social Links Menu'
+    ) ); ?>
+  </section>
 </aside>

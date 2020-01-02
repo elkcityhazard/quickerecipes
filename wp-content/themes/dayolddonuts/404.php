@@ -1,8 +1,4 @@
 <?php /*404 page template */ ?>
-<?php if ( function_exists( 'the_custom_logo' ) ) {
- the_custom_logo();
-} ?>
-
 <?php get_header(); ?>
 <div class="wrapper">
 <?php get_sidebar(); ?>

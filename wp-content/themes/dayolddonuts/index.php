@@ -1,14 +1,10 @@
 <?php get_header(); ?>
-<?php if ( function_exists( 'the_custom_logo' ) ) {
- the_custom_logo();
-} ?>
 <div class="wrapper">
 <?php get_sidebar(); ?>
 <main id="main-content">
   <h1><?php bloginfo( 'name' ); ?></h1>
 <h2><?php bloginfo( 'description' ); ?></h2>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
     <article <?php post_class();?> >
   <h1><?php the_title(); ?></h1>
     <?php the_content(); ?>
