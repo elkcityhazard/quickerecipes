@@ -1,7 +1,4 @@
 <?php get_header(); ?>
-<?php if ( function_exists( 'the_custom_logo' ) ) {
- the_custom_logo();
-} ?>
 <div class="wrapper">
   <?php get_sidebar(); ?>
   <main id="main-content">
