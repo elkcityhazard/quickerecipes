@@ -1,7 +1,6 @@
 * {
   box-sizing: border-box;
-  scroll-behavior: smooth;
-    /* border: 1px solid red; */
+      /* border: 1px solid red; */
 }
 
 /*
@@ -34,9 +33,9 @@ p, em {
   padding: 0 10px;
 }
 
-p {
+/* p {
   padding-left: 10px;
-}
+} */
 
 a:hover, a:active {
   color:#000;
@@ -67,6 +66,7 @@ html, body {
   line-height: 1.5;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
   }
 
 body {
@@ -135,6 +135,30 @@ ul.menu li {
 .menu-item a:hover, .menu-item a:active {
   background-color: #fff;
   color: #000;
+}
+
+
+#site-header {
+  background: rgb(177,0,0);
+  background: -moz-linear-gradient(90deg, rgba(177,0,0,1) 20%, rgba(0,0,0,1) 50%, rgba(177,0,0,1) 80%, rgba(177,0,0,1) 80%);
+  background: -webkit-linear-gradient(90deg, rgba(177,0,0,1) 20%, rgba(0,0,0,1) 50%, rgba(177,0,0,1) 80%, rgba(177,0,0,1) 80%);
+  background: linear-gradient(90deg, rgba(177,0,0,1) 20%, rgba(0,0,0,1) 50%, rgba(177,0,0,1) 80%, rgba(177,0,0,1) 80%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b10000",endColorstr="#b10000",GradientType=1);
+  text-align: center;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 0 2px 2px #000;
+}
+
+#site-header a {
+  color: #fff;
+  text-align: center;
+  margin: auto;
+  text-decoration: none !important;
 }
 
 .button-hover {
@@ -227,13 +251,7 @@ a.post-nav-prev, a.post-nav-next {
     display: none;
 }
 
-#site-header {
-  width: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-  margin: 0;
-  padding: 0;
-}
+
 
 #wp-custom-header-video {
   width: 100%;
@@ -298,6 +316,29 @@ a.post-nav-prev, a.post-nav-next {
       flex-wrap: nowrap;
       justify-content: space-around;
     }
+
+
+    figure.has-post-thumbnail {
+      position: relative;
+      max-width: 500px;
+      margin: 10px auto;
+    }
+
+    figure.has-post-thumbnail figcaption {
+      background-color: #fff;
+      margin: 0 auto;
+      padding-bottom: 5px;
+      max-width: 500px;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      opacity: .65;
+    }
+
+    figure.has-post-thumbnail figcaption:hover {
+      opacity: .80;
+    }
+
     .menu-item a:link, .menu-item a:visited {
       font-size: 1.5em;
     }
@@ -340,7 +381,7 @@ a.post-nav-prev, a.post-nav-next {
       align-self: stretch;
       background-color: #fff;
       font-size: 1em;
-      flex: 1 125px;
+      flex: 1 100px;
       margin-top: 40px;
       margin-left: 10px;
   }
@@ -348,10 +389,32 @@ a.post-nav-prev, a.post-nav-next {
 
 
   #main-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     align-self: stretch;
     background-color: #fff;
-    flex: 2 500px;
+    flex: 2 750px;
     margin: 40px 10px 0 20px;
+  }
+
+  #front-page-main-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    flex: 1 500px;
+  }
+
+  div.wp-block-columns {
+    flex-basis: 100%;
+    width: 100%;
+  }
+
+  article.page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    flex-basis: 100%;
   }
 
   .content-area {
@@ -385,7 +448,7 @@ a.post-nav-prev, a.post-nav-next {
   .footer-container {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin: 40px auto;
     width: 50%;
   }

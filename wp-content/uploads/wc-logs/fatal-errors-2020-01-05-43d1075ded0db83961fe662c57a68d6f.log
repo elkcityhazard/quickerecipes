@@ -1,0 +1,26 @@
+2020-01-05T02:05:27+00:00 CRITICAL Uncaught Error: Call to undefined function get_featured_image() in /var/www/html/wordpress/wp-content/themes/dayolddonuts/front-page.php:15
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/template-loader.php(98): include()
+#1 /var/www/html/wordpress/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#2 /var/www/html/wordpress/index.php(17): require('/var/www/html/w...')
+#3 {main}
+  thrown in /var/www/html/wordpress/wp-content/themes/dayolddonuts/front-page.php on line 15
+
+2020-01-05T02:06:37+00:00 CRITICAL Uncaught Error: Call to undefined function get_featured_image() in /var/www/html/wordpress/wp-content/themes/dayolddonuts/front-page.php:15
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/template-loader.php(98): include()
+#1 /var/www/html/wordpress/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#2 /var/www/html/wordpress/index.php(17): require('/var/www/html/w...')
+#3 {main}
+  thrown in /var/www/html/wordpress/wp-content/themes/dayolddonuts/front-page.php on line 15
+
+2020-01-05T02:14:37+00:00 CRITICAL Uncaught Error: Call to undefined function get_page_permalink() in /var/www/html/wordpress/wp-content/themes/dayolddonuts/front-page.php:19
+Stack trace:
+#0 /var/www/html/wordpress/wp-includes/template-loader.php(98): include()
+#1 /var/www/html/wordpress/wp-blog-header.php(19): require_once('/var/www/html/w...')
+#2 /var/www/html/wordpress/index.php(17): require('/var/www/html/w...')
+#3 {main}
+  thrown in /var/www/html/wordpress/wp-content/themes/dayolddonuts/front-page.php on line 19
+
+2020-01-05T02:16:06+00:00 CRITICAL syntax error, unexpected 'the_excerpt' (T_STRING) in /var/www/html/wordpress/wp-content/themes/dayolddonuts/front-page.php on line 13
+

@@ -80,8 +80,8 @@ $table_prefix = '735hjq9';
  */
 define( 'WP_DEBUG', true );
 
-define('WP_HOME','http://192.168.0.11/wordpress');
-define('WP_SITEURL','http://192.168.0.11/wordpress');
+define('WP_HOME','http://localhost/wordpress');
+define('WP_SITEURL','http://localhost/wordpress');
 
 define('WP_ALLOW_REPAIR', true);
 /* That's all, stop editing! Happy publishing. */

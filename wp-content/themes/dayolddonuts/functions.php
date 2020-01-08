@@ -1,9 +1,15 @@
 <?php
 
+function dayolddonuts_theme_setup() {
 if ( ! isset( $content_width ) )
     $content_width = 500;
 
 add_theme_support( 'post-thumbnails' );
+add_theme_support( 'automatic-feed-links' );
+add_theme_support( 'post-formats',  array ( 'aside', 'gallery', 'quote', 'image', 'video' ) );
+}
+add_action('after_setup_theme', 'dayolddonuts_theme_setup');
+
 
 // register navigation menus
 function register_custom_nav_menus() {
@@ -11,6 +17,7 @@ function register_custom_nav_menus() {
     'main-nav' => 'Main Navigation Bar',
 		'mobile-nav' => 'Mobile Navigation Menu',
 		'footer_menu' => 'Footer Menu',
+    'site_map' => 'Site Map Navigation'
 	) );
 }
 
@@ -30,6 +37,7 @@ function dayolddonuts_custom_header() {
   'flex-height' => true,
   'video' => true,
 );
+add_theme_support('custom-header', $defaults);
 }
 add_action('after_setup_theme', 'dayolddonuts_custom_header');
 
