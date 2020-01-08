@@ -8758,12 +8758,17 @@ Settings = View.extend(/** @lends wp.media.view.Settings.prototype */{
 
 		// Handle button groups.
 		} else if ( $setting.hasClass('button-group') ) {
+<<<<<<< HEAD
 			$buttons = $setting.find( 'button' )
 				.removeClass( 'active' )
 				.attr( 'aria-pressed', 'false' );
 			$buttons.filter( '[value="' + value + '"]' )
 				.addClass( 'active' )
 				.attr( 'aria-pressed', 'true' );
+=======
+			$buttons = $setting.find('button').removeClass('active');
+			$buttons.filter( '[value="' + value + '"]' ).addClass('active');
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 
 		// Handle text inputs and textareas.
 		} else if ( $setting.is('input[type="text"], textarea') ) {

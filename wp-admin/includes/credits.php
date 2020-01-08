@@ -78,7 +78,11 @@ function _wp_credits_build_object_link( &$data ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays the title for a given group of contributors.
+=======
+ * Display a the title for a given group of contributors.
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
  *
  * @since 5.3.0
  *
@@ -106,7 +110,11 @@ function wp_credits_section_title( $group_data = array() ) {
 }
 
 /**
+<<<<<<< HEAD
  * Displays a list of contributors for a given group.
+=======
+ * Display a list of contributors for a given group.
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
  *
  * @since 5.3.0
  *

@@ -63,7 +63,11 @@
 							twentytwenty_site_logo();
 
 							// Site description.
+<<<<<<< HEAD
 							twentytwenty_site_description();
+=======
+							//twentytwenty_site_description();
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 						?>
 
 					</div><!-- .header-titles -->

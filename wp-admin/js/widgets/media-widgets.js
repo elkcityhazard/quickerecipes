@@ -417,6 +417,13 @@ wp.mediaWidgets = ( function( $ ) {
 			}).render();
 
 			this.content.set( view );
+<<<<<<< HEAD
+=======
+
+			if ( ! wp.media.isTouchDevice ) {
+				view.url.focus();
+			}
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 		}
 	});
 

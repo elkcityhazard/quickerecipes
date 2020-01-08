@@ -1016,6 +1016,7 @@ class WP_Site_Health {
 	}
 
 	/**
+<<<<<<< HEAD
 	 * Test if the PHP default timezone is set to UTC.
 	 *
 	 * @since 5.3.1
@@ -1056,6 +1057,8 @@ class WP_Site_Health {
 	}
 
 	/**
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	 * Test if the SQL server is up to date.
 	 *
 	 * @since 5.2.0
@@ -1882,6 +1885,7 @@ class WP_Site_Health {
 	public static function get_tests() {
 		$tests = array(
 			'direct' => array(
+<<<<<<< HEAD
 				'wordpress_version'    => array(
 					'label' => __( 'WordPress Version' ),
 					'test'  => 'wordpress_version',
@@ -1931,6 +1935,53 @@ class WP_Site_Health {
 					'test'  => 'http_requests',
 				),
 				'debug_enabled'        => array(
+=======
+				'wordpress_version' => array(
+					'label' => __( 'WordPress Version' ),
+					'test'  => 'wordpress_version',
+				),
+				'plugin_version'    => array(
+					'label' => __( 'Plugin Versions' ),
+					'test'  => 'plugin_version',
+				),
+				'theme_version'     => array(
+					'label' => __( 'Theme Versions' ),
+					'test'  => 'theme_version',
+				),
+				'php_version'       => array(
+					'label' => __( 'PHP Version' ),
+					'test'  => 'php_version',
+				),
+				'sql_server'        => array(
+					'label' => __( 'Database Server version' ),
+					'test'  => 'sql_server',
+				),
+				'php_extensions'    => array(
+					'label' => __( 'PHP Extensions' ),
+					'test'  => 'php_extensions',
+				),
+				'utf8mb4_support'   => array(
+					'label' => __( 'MySQL utf8mb4 support' ),
+					'test'  => 'utf8mb4_support',
+				),
+				'https_status'      => array(
+					'label' => __( 'HTTPS status' ),
+					'test'  => 'https_status',
+				),
+				'ssl_support'       => array(
+					'label' => __( 'Secure communication' ),
+					'test'  => 'ssl_support',
+				),
+				'scheduled_events'  => array(
+					'label' => __( 'Scheduled events' ),
+					'test'  => 'scheduled_events',
+				),
+				'http_requests'     => array(
+					'label' => __( 'HTTP Requests' ),
+					'test'  => 'http_requests',
+				),
+				'debug_enabled'     => array(
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 					'label' => __( 'Debugging enabled' ),
 					'test'  => 'is_in_debug_mode',
 				),

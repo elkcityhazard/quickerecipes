@@ -7,7 +7,11 @@
  * @since 1.0.0
  */
 
+<<<<<<< HEAD
 if ( (bool) get_the_author_meta( 'description' ) && (bool) get_theme_mod( 'show_author_bio', true ) ) : ?>
+=======
+if ( (bool) get_the_author_meta( 'description' ) ) : ?>
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 <div class="author-bio">
 	<div class="author-title-wrapper">
 		<div class="author-avatar vcard">

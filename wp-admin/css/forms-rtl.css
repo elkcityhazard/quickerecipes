@@ -28,7 +28,11 @@ label {
 
 input,
 select {
+<<<<<<< HEAD
 	margin: 0 1px;
+=======
+	margin: 1px;
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 }
 
 textarea.code {
@@ -308,21 +312,35 @@ input[type="radio"].disabled:checked:before {
 ------------------------------------------------------------------------------*/
 
 /* Select styles are based on the default button in buttons.css */
+<<<<<<< HEAD
 .wp-core-ui select {
 	font-size: 14px;
 	line-height: 2; /* 28px */
+=======
+.wp-admin select {
+	font-size: 13px;
+	line-height: 1.38461538; /* 18px */
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	color: #32373c;
 	border-color: #7e8993;
 	box-shadow: none;
 	border-radius: 3px;
+<<<<<<< HEAD
 	padding: 0 8px 0 24px;
 	min-height: 30px;
 	max-width: 25rem;
+=======
+	padding: 3px 8px 3px 24px;
+	min-height: 28px;
+	max-width: 25rem;
+	vertical-align: middle;
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	-webkit-appearance: none;
 	/* The SVG is arrow-down-alt2 from Dashicons. */
 	background: #fff url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M5%206l5%205%205-5%202%201-7%207-7-7%202-1z%22%20fill%3D%22%23555%22%2F%3E%3C%2Fsvg%3E') no-repeat left 5px top 55%;
 	background-size: 16px 16px;
 	cursor: pointer;
+<<<<<<< HEAD
 	vertical-align: middle;
 }e
 
@@ -331,18 +349,43 @@ input[type="radio"].disabled:checked:before {
 }
 
 .wp-core-ui select:focus {
+=======
+}
+
+/* Color and font size in the core form tables. */
+.wp-admin .form-table select {
+	font-size: 14px;
+	line-height: 1.28571428; /* 18px */
+	color: #32373c;
+}
+
+.wp-admin select:hover {
+	color: #007cba;
+}
+
+.wp-admin select:focus {
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	border-color: #007cba;
 	color: #016087;
 	box-shadow: 0 0 0 1px #007cba;
 }
 
+<<<<<<< HEAD
 .wp-core-ui select:active {
+=======
+.wp-admin select:active {
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	border-color: #999;
 	box-shadow: none;
 }
 
+<<<<<<< HEAD
 .wp-core-ui select.disabled,
 .wp-core-ui select:disabled {
+=======
+.wp-admin select.disabled,
+.wp-admin select:disabled {
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	color: #a0a5aa;
 	border-color: #ddd;
 	background-color: #f7f7f7;
@@ -356,17 +399,26 @@ input[type="radio"].disabled:checked:before {
 
 /* Reset Firefox inner outline that appears on :focus. */
 /* This ruleset overrides the color change on :focus thus needs to be after select:focus. */
+<<<<<<< HEAD
 .wp-core-ui select:-moz-focusring {
+=======
+.wp-admin select:-moz-focusring {
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	color: transparent;
 	text-shadow: 0 0 0 #016087;
 }
 
 /* Remove background focus style from IE11 while keeping focus style available on option elements. */
+<<<<<<< HEAD
 .wp-core-ui select::-ms-value {
+=======
+.wp-admin select::-ms-value {
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	background: transparent;
 	color: #555;
 }
 
+<<<<<<< HEAD
 .wp-core-ui select:hover::-ms-value {
 	color: #007cba;
 }
@@ -377,11 +429,27 @@ input[type="radio"].disabled:checked:before {
 
 .wp-core-ui select.disabled::-ms-value,
 .wp-core-ui select:disabled::-ms-value {
+=======
+.wp-admin select:hover::-ms-value {
+	color: #007cba;
+}
+
+.wp-admin select:focus::-ms-value {
+	color: #016087;
+}
+
+.wp-admin select.disabled::-ms-value,
+.wp-admin select:disabled::-ms-value {
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	color: #a0a5aa;
 }
 
 /* Hide the native down arrow for select element on IE. */
+<<<<<<< HEAD
 .wp-core-ui select::-ms-expand {
+=======
+.wp-admin select::-ms-expand {
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	display: none;
 }
 
@@ -400,7 +468,11 @@ input[type="radio"].disabled:checked:before {
 	margin-top: 0;
 }
 
+<<<<<<< HEAD
 .wp-core-ui select[multiple] {
+=======
+.wp-admin select[multiple] {
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	height: auto;
 	padding-left: 8px;
 	background: #fff;
@@ -477,7 +549,18 @@ input[type="number"].tiny-text {
 #doaction,
 #doaction2,
 #post-query-submit {
+<<<<<<< HEAD
 	margin: 0 0 0 8px;
+=======
+	margin: 1px 0 0 8px;
+}
+
+.tablenav #changeit,
+.tablenav #delete_all,
+.tablenav #clear-recent-list,
+.wp-filter #delete_all {
+	margin-top: 1px;
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 }
 
 .tablenav .actions select {
@@ -494,10 +577,13 @@ input[type="number"].tiny-text {
 .wp-cancel-pw > .dashicons {
 	position: relative;
 	top: 3px;
+<<<<<<< HEAD
 	width: 1.25rem;
 	height: 1.25rem;
 	top: 0.25rem;
 	font-size: 20px;
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 }
 
 .wp-cancel-pw .dashicons-no {
@@ -591,12 +677,18 @@ fieldset label,
 .wp-pwd [type="password"] {
 	margin-bottom: 0;
 	/* Same height as the buttons */
+<<<<<<< HEAD
 	min-height: 30px;
 }
 
 /* Hide the Edge "reveal password" native button */
 .wp-pwd input::-ms-reveal {
 	display: none;
+=======
+	line-height: 20px;
+	min-height: 28px;
+	max-height: 40px;
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 }
 
 #pass1-text,
@@ -1318,8 +1410,11 @@ table.form-table td .updated p {
 	input[type="week"] {
 		-webkit-appearance: none;
 		padding: 3px 10px;
+<<<<<<< HEAD
 		/* Only necessary for IE11 */
 		min-height: 40px;
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	}
 
 	::-webkit-datetime-edit {
@@ -1371,7 +1466,11 @@ table.form-table td .updated p {
 		margin-top: 10px;
 	}
 
+<<<<<<< HEAD
 	.wp-core-ui select,
+=======
+	.wp-admin select,
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	.wp-admin .form-table select {
 		min-height: 40px;
 		font-size: 16px;
@@ -1521,10 +1620,13 @@ table.form-table td .updated p {
 		font-size: 14px;
 	}
 
+<<<<<<< HEAD
 	.background-position-control .button-group > label {
 		font-size: 0;
 	}
 
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	.form-table fieldset label {
 		display: block;
 	}
@@ -1560,6 +1662,7 @@ table.form-table td .updated p {
 		position: absolute;
 		left: 0;
 		top: 0;
+<<<<<<< HEAD
 		width: 2.375rem;
 		height: 2.375rem;
 		min-width: 40px;
@@ -1568,6 +1671,12 @@ table.form-table td .updated p {
 
 	.wp-pwd button.wp-hide-pw {
 		left: 2.5rem;
+=======
+	}
+
+	.wp-pwd button.wp-hide-pw {
+		left: 40px;
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	}
 
 	.wp-pwd button.button:hover,
@@ -1588,7 +1697,10 @@ table.form-table td .updated p {
 	.wp-pwd [type="text"],
 	.wp-pwd [type="password"] {
 		line-height: 2;
+<<<<<<< HEAD
 		padding-left: 5rem;
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	}
 
 	.wp-cancel-pw .dashicons-no {

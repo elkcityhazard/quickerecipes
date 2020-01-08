@@ -73,7 +73,11 @@
 
 .media-frame select,
 .wp-admin .media-frame select {
+<<<<<<< HEAD
 	min-height: 30px;
+=======
+	min-height: 28px;
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	vertical-align: middle;
 }
 
@@ -120,12 +124,15 @@
 	line-height: 2.15384615; /* 28px */
 }
 
+<<<<<<< HEAD
 /* Search field in the Media Library toolbar */
 .media-frame.mode-grid .wp-filter input[type="search"] {
 	font-size: 14px;
 	line-height: 2;
 }
 
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 .media-frame input[type="text"]:focus,
 .media-frame input[type="password"]:focus,
 .media-frame input[type="number"]:focus,

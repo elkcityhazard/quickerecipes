@@ -631,6 +631,7 @@ class WP_List_Table {
 		<div class="view-switch">
 		<?php
 		foreach ( $this->modes as $mode => $title ) {
+<<<<<<< HEAD
 			$classes      = array( 'view-' . $mode );
 			$aria_current = '';
 
@@ -640,6 +641,14 @@ class WP_List_Table {
 			}
 			printf(
 				"<a href='%s' class='%s' id='view-switch-$mode'$aria_current><span class='screen-reader-text'>%s</span></a>\n",
+=======
+			$classes = array( 'view-' . $mode );
+			if ( $current_mode === $mode ) {
+				$classes[] = 'current';
+			}
+			printf(
+				"<a href='%s' class='%s' id='view-switch-$mode'><span class='screen-reader-text'>%s</span></a>\n",
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 				esc_url( add_query_arg( 'mode', $mode ) ),
 				implode( ' ', $classes ),
 				$title

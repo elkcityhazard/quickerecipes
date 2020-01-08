@@ -2,7 +2,11 @@
 Contributors: matt, ryan, andy, mdawaffe, tellyworth, josephscott, lessbloat, eoigal, cfinke, automattic, jgs, procifer, stephdau
 Tags: akismet, comments, spam, antispam, anti-spam, anti spam, comment moderation, comment spam, contact form spam, spam comments
 Requires at least: 4.0
+<<<<<<< HEAD
 Tested up to: 5.3
+=======
+Tested up to: 5.2
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 Stable tag: 4.1.3
 License: GPLv2 or later
 

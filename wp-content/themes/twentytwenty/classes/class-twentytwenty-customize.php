@@ -205,7 +205,11 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 				)
 			);
 
+<<<<<<< HEAD
 			/* Enable Header Search ----------------------------------------------- */
+=======
+			/* Enable Header Search --------- */
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 
 			$wp_customize->add_setting(
 				'enable_header_search',
@@ -226,6 +230,7 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 				)
 			);
 
+<<<<<<< HEAD
 			/* Show author bio ---------------------------------------------------- */
 
 			$wp_customize->add_setting(
@@ -247,6 +252,8 @@ if ( ! class_exists( 'TwentyTwenty_Customize' ) ) {
 				)
 			);
 
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 			/* Display full content or excerpts on the blog and archives --------- */
 
 			$wp_customize->add_setting(

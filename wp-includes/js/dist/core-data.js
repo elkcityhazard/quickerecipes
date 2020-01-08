@@ -976,10 +976,17 @@ function receiveEmbedPreview(url, preview) {
 
 function editEntityRecord(kind, name, recordId, edits) {
   var options,
+<<<<<<< HEAD
       entity,
       _entity$transientEdit,
       transientEdits,
       _entity$mergedEdits,
+=======
+      _ref,
+      _ref$transientEdits,
+      transientEdits,
+      _ref$mergedEdits,
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
       mergedEdits,
       record,
       editedRecord,
@@ -995,6 +1002,7 @@ function editEntityRecord(kind, name, recordId, edits) {
           return controls_select('getEntity', kind, name);
 
         case 3:
+<<<<<<< HEAD
           entity = _context.sent;
 
           if (entity) {
@@ -1015,6 +1023,22 @@ function editEntityRecord(kind, name, recordId, edits) {
           return controls_select('getEditedEntityRecord', kind, name, recordId);
 
         case 12:
+=======
+          _ref = _context.sent;
+          _ref$transientEdits = _ref.transientEdits;
+          transientEdits = _ref$transientEdits === void 0 ? {} : _ref$transientEdits;
+          _ref$mergedEdits = _ref.mergedEdits;
+          mergedEdits = _ref$mergedEdits === void 0 ? {} : _ref$mergedEdits;
+          _context.next = 10;
+          return controls_select('getRawEntityRecord', kind, name, recordId);
+
+        case 10:
+          record = _context.sent;
+          _context.next = 13;
+          return controls_select('getEditedEntityRecord', kind, name, recordId);
+
+        case 13:
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
           editedRecord = _context.sent;
           edit = {
             kind: kind,
@@ -1045,7 +1069,11 @@ function editEntityRecord(kind, name, recordId, edits) {
             }
           }));
 
+<<<<<<< HEAD
         case 15:
+=======
+        case 16:
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
         case "end":
           return _context.stop();
       }
@@ -1155,8 +1183,13 @@ function __unstableCreateUndoLevel() {
  */
 
 function saveEntityRecord(kind, name, record) {
+<<<<<<< HEAD
   var _ref,
       _ref$isAutosave,
+=======
+  var _ref2,
+      _ref2$isAutosave,
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
       isAutosave,
       entities,
       entity,
@@ -1180,9 +1213,15 @@ function saveEntityRecord(kind, name, record) {
     while (1) {
       switch (_context4.prev = _context4.next) {
         case 0:
+<<<<<<< HEAD
           _ref = _args4.length > 3 && _args4[3] !== undefined ? _args4[3] : {
             isAutosave: false
           }, _ref$isAutosave = _ref.isAutosave, isAutosave = _ref$isAutosave === void 0 ? false : _ref$isAutosave;
+=======
+          _ref2 = _args4.length > 3 && _args4[3] !== undefined ? _args4[3] : {
+            isAutosave: false
+          }, _ref2$isAutosave = _ref2.isAutosave, isAutosave = _ref2$isAutosave === void 0 ? false : _ref2$isAutosave;
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
           _context4.next = 3;
           return getKindEntities(kind);
 
@@ -2538,6 +2577,7 @@ function getEntityRecordEdits(state, kind, name, recordId) {
  */
 
 var getEntityRecordNonTransientEdits = Object(rememo["a" /* default */])(function (state, kind, name, recordId) {
+<<<<<<< HEAD
   var _ref = getEntity(state, kind, name) || {},
       transientEdits = _ref.transientEdits;
 
@@ -2547,6 +2587,13 @@ var getEntityRecordNonTransientEdits = Object(rememo["a" /* default */])(functio
     return edits;
   }
 
+=======
+  var _getEntity = getEntity(state, kind, name),
+      _getEntity$transientE = _getEntity.transientEdits,
+      transientEdits = _getEntity$transientE === void 0 ? {} : _getEntity$transientE;
+
+  var edits = getEntityRecordEdits(state, kind, name, recordId) || [];
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
   return Object.keys(edits).reduce(function (acc, key) {
     if (!transientEdits[key]) {
       acc[key] = edits[key];

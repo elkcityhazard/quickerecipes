@@ -1,7 +1,11 @@
 === Twenty Twenty ===
 Contributors: the WordPress team
 Tested up to: 5.3
+<<<<<<< HEAD
 Stable tag: 1.1
+=======
+Stable tag: 1.0
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +26,7 @@ you pick, ensuring a high, accessible color contrast for your visitors.
 
 == Changelog ==
 
+<<<<<<< HEAD
 = 1.1 =
 * Released: December 12, 2019
 
@@ -32,6 +37,8 @@ https://wordpress.org/support/article/twenty-twenty-changelog/
 
 Initial release
 
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 == Copyright ==
 
 Twenty Twenty WordPress Theme, Copyright 2019 WordPress.org

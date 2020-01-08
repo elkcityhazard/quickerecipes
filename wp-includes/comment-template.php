@@ -2433,7 +2433,11 @@ function comment_form( $args = array(), $post_id = null ) {
 	$args = array_merge( $defaults, $args );
 
 	// Remove aria-describedby from the email field if there's no associated description.
+<<<<<<< HEAD
 	if ( isset( $args['fields']['email'] ) && false === strpos( $args['comment_notes_before'], 'id="email-notes"' ) ) {
+=======
+	if ( false === strpos( $args['comment_notes_before'], 'id="email-notes"' ) ) {
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 		$args['fields']['email'] = str_replace(
 			' aria-describedby="email-notes"',
 			'',

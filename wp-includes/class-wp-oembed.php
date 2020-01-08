@@ -78,6 +78,10 @@ class WP_oEmbed {
 			'#https?://(.+\.)?imgur\.com/.*#i'             => array( 'https://api.imgur.com/oembed', true ),
 			'#https?://(www\.)?meetu(\.ps|p\.com)/.*#i'    => array( 'https://api.meetup.com/oembed', true ),
 			'#https?://(www\.)?issuu\.com/.+/docs/.+#i'    => array( 'https://issuu.com/oembed_wp', true ),
+<<<<<<< HEAD
+=======
+			'#https?://(www\.)?collegehumor\.com/video/.*#i' => array( 'https://www.collegehumor.com/oembed.{format}', true ),
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 			'#https?://(www\.)?mixcloud\.com/.*#i'         => array( 'https://www.mixcloud.com/oembed', true ),
 			'#https?://(www\.|embed\.)?ted\.com/talks/.*#i' => array( 'https://www.ted.com/services/v1/oembed.{format}', true ),
 			'#https?://(www\.)?(animoto|video214)\.com/play/.*#i' => array( 'https://animoto.com/oembeds/create', true ),
@@ -163,6 +167,10 @@ class WP_oEmbed {
 		 * | Meetup.com   | meetu.ps                                  | 3.9.0   |
 		 * | Animoto      | animoto.com                               | 4.0.0   |
 		 * | Animoto      | video214.com                              | 4.0.0   |
+<<<<<<< HEAD
+=======
+		 * | CollegeHumor | collegehumor.com                          | 4.0.0   |
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 		 * | Issuu        | issuu.com                                 | 4.0.0   |
 		 * | Mixcloud     | mixcloud.com                              | 4.0.0   |
 		 * | Crowdsignal  | poll.fm                                   | 4.0.0   |
@@ -209,7 +217,10 @@ class WP_oEmbed {
 		 * | Vine         | vine.co              | 4.1.0     | 4.9.0     |
 		 * | Photobucket  | photobucket.com      | 2.9.0     | 5.1.0     |
 		 * | Funny or Die | funnyordie.com       | 3.0.0     | 5.1.0     |
+<<<<<<< HEAD
 		 * | CollegeHumor | collegehumor.com     | 4.0.0     | 5.3.1     |
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 		 *
 		 * @see wp_oembed_add_provider()
 		 *

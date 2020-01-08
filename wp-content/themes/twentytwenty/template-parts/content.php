@@ -18,7 +18,11 @@
 	<?php
 
 	get_template_part( 'template-parts/entry-header' );
+<<<<<<< HEAD
 
+=======
+	
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	if ( ! is_search() ) {
 		get_template_part( 'template-parts/featured-image' );
 	}

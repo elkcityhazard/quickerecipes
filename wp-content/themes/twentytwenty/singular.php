@@ -20,7 +20,10 @@ get_header();
 
 		while ( have_posts() ) {
 			the_post();
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 			get_template_part( 'template-parts/content', get_post_type() );
 		}
 	}

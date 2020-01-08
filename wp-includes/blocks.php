@@ -74,11 +74,19 @@ function has_blocks( $post = null ) {
  * @since 5.0.0
  * @see parse_blocks()
  *
+<<<<<<< HEAD
  * @param string                  $block_name Full Block type to look for.
  * @param int|string|WP_Post|null $post Optional. Post content, post ID, or post object. Defaults to global $post.
  * @return bool Whether the post content contains the specified block.
  */
 function has_block( $block_name, $post = null ) {
+=======
+ * @param string                  $block_type Full Block type to look for.
+ * @param int|string|WP_Post|null $post Optional. Post content, post ID, or post object. Defaults to global $post.
+ * @return bool Whether the post content contains the specified block.
+ */
+function has_block( $block_type, $post = null ) {
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	if ( ! has_blocks( $post ) ) {
 		return false;
 	}
@@ -90,6 +98,7 @@ function has_block( $block_name, $post = null ) {
 		}
 	}
 
+<<<<<<< HEAD
 	/*
 	 * Normalize block name to include namespace, if provided as non-namespaced.
 	 * This matches behavior for WordPress 5.0.0 - 5.3.0 in matching blocks by
@@ -114,6 +123,9 @@ function has_block( $block_name, $post = null ) {
 	}
 
 	return $has_block;
+=======
+	return false !== strpos( $post, '<!-- wp:' . $block_type . ' ' );
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 }
 
 /**
@@ -137,6 +149,7 @@ function get_dynamic_block_names() {
 }
 
 /**
+<<<<<<< HEAD
  * Given an array of attributes, returns a string in the serialized attributes
  * format prepared for post content.
  *
@@ -338,6 +351,8 @@ function filter_block_kses_value( $value, $allowed_html, $allowed_protocols = ar
 }
 
 /**
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
  * Parses blocks out of a content string, and renders those appropriate for the excerpt.
  *
  * As the excerpt should be a small string of text relevant to the full post content,

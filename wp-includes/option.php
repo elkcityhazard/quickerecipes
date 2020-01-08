@@ -189,6 +189,7 @@ function form_option( $option ) {
  * Loads and caches all autoloaded options, if available or all options.
  *
  * @since 2.2.0
+<<<<<<< HEAD
  * @since 5.3.1 The `$force_cache` parameter was added.
  *
  * @global wpdb $wpdb WordPress database abstraction object.
@@ -202,6 +203,18 @@ function wp_load_alloptions( $force_cache = false ) {
 
 	if ( ! wp_installing() || ! is_multisite() ) {
 		$alloptions = wp_cache_get( 'alloptions', 'options', $force_cache );
+=======
+ *
+ * @global wpdb $wpdb WordPress database abstraction object.
+ *
+ * @return array List of all options.
+ */
+function wp_load_alloptions() {
+	global $wpdb;
+
+	if ( ! wp_installing() || ! is_multisite() ) {
+		$alloptions = wp_cache_get( 'alloptions', 'options' );
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	} else {
 		$alloptions = false;
 	}
@@ -400,7 +413,11 @@ function update_option( $option, $value, $autoload = null ) {
 	}
 
 	if ( ! wp_installing() ) {
+<<<<<<< HEAD
 		$alloptions = wp_load_alloptions( true );
+=======
+		$alloptions = wp_load_alloptions();
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 		if ( isset( $alloptions[ $option ] ) ) {
 			$alloptions[ $option ] = $serialized_value;
 			wp_cache_set( 'alloptions', $alloptions, 'options' );
@@ -508,7 +525,11 @@ function add_option( $option, $value = '', $deprecated = '', $autoload = 'yes' )
 
 	if ( ! wp_installing() ) {
 		if ( 'yes' == $autoload ) {
+<<<<<<< HEAD
 			$alloptions            = wp_load_alloptions( true );
+=======
+			$alloptions            = wp_load_alloptions();
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 			$alloptions[ $option ] = $serialized_value;
 			wp_cache_set( 'alloptions', $alloptions, 'options' );
 		} else {
@@ -586,7 +607,11 @@ function delete_option( $option ) {
 	$result = $wpdb->delete( $wpdb->options, array( 'option_name' => $option ) );
 	if ( ! wp_installing() ) {
 		if ( 'yes' == $row->autoload ) {
+<<<<<<< HEAD
 			$alloptions = wp_load_alloptions( true );
+=======
+			$alloptions = wp_load_alloptions();
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 			if ( is_array( $alloptions ) && isset( $alloptions[ $option ] ) ) {
 				unset( $alloptions[ $option ] );
 				wp_cache_set( 'alloptions', $alloptions, 'options' );

@@ -3146,6 +3146,7 @@ function wp_rel_ugc( $text ) {
  */
 function wp_targeted_link_rel( $text ) {
 	// Don't run (more expensive) regex if no links with targets.
+<<<<<<< HEAD
 	if ( stripos( $text, 'target' ) === false || stripos( $text, '<a ' ) === false || is_serialized( $text ) ) {
 		return $text;
 	}
@@ -3165,6 +3166,11 @@ function wp_targeted_link_rel( $text ) {
 		$text .= $html_parts[ $i ];
 		if ( isset( $extra_parts[ $i ] ) ) {
 			$text .= $extra_parts[ $i ];
+=======
+	if ( stripos( $text, 'target' ) !== false && stripos( $text, '<a ' ) !== false ) {
+		if ( ! is_serialized( $text ) ) {
+			$text = preg_replace_callback( '|<a\s([^>]*target\s*=[^>]*)>|i', 'wp_targeted_link_rel_callback', $text );
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 		}
 	}
 
@@ -3183,6 +3189,7 @@ function wp_targeted_link_rel( $text ) {
  * @return string HTML A Element with rel noreferrer noopener in addition to any existing values
  */
 function wp_targeted_link_rel_callback( $matches ) {
+<<<<<<< HEAD
 	$link_html          = $matches[1];
 	$original_link_html = $link_html;
 
@@ -3194,6 +3201,10 @@ function wp_targeted_link_rel_callback( $matches ) {
 	}
 
 	$atts = wp_kses_hair( $link_html, wp_allowed_protocols() );
+=======
+	$link_html = $matches[1];
+	$rel_match = array();
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 
 	/**
 	 * Filters the rel values that are added to links with `target` attribute.
@@ -3205,6 +3216,7 @@ function wp_targeted_link_rel_callback( $matches ) {
 	 */
 	$rel = apply_filters( 'wp_targeted_link_rel', 'noopener noreferrer', $link_html );
 
+<<<<<<< HEAD
 	// Return early if no rel values to be added or if no actual target attribute
 	if ( ! $rel || ! isset( $atts['target'] ) ) {
 		return "<a $original_link_html>";
@@ -3220,6 +3232,37 @@ function wp_targeted_link_rel_callback( $matches ) {
 
 	if ( $is_escaped ) {
 		$link_html = preg_replace( '/[\'"]/', '\\\\$0', $link_html );
+=======
+	// Avoid additional regex if the filter removes rel values.
+	if ( ! $rel ) {
+		return "<a $link_html>";
+	}
+
+	// Value with delimiters, spaces around are optional.
+	$attr_regex = '|rel\s*=\s*?(\\\\{0,1}["\'])(.*?)\\1|i';
+	preg_match( $attr_regex, $link_html, $rel_match );
+
+	if ( empty( $rel_match[0] ) ) {
+		// No delimiters, try with a single value and spaces, because `rel =  va"lue` is totally fine...
+		$attr_regex = '|rel\s*=(\s*)([^\s]*)|i';
+		preg_match( $attr_regex, $link_html, $rel_match );
+	}
+
+	if ( ! empty( $rel_match[0] ) ) {
+		$parts     = preg_split( '|\s+|', strtolower( $rel_match[2] ) );
+		$parts     = array_map( 'esc_attr', $parts );
+		$needed    = explode( ' ', $rel );
+		$parts     = array_unique( array_merge( $parts, $needed ) );
+		$delimiter = trim( $rel_match[1] ) ? $rel_match[1] : '"';
+		$rel       = 'rel=' . $delimiter . trim( implode( ' ', $parts ) ) . $delimiter;
+		$link_html = str_replace( $rel_match[0], $rel, $link_html );
+	} elseif ( preg_match( '|target\s*=\s*?\\\\"|', $link_html ) ) {
+		$link_html .= " rel=\\\"$rel\\\"";
+	} elseif ( preg_match( '#(target|href)\s*=\s*?\'#', $link_html ) ) {
+		$link_html .= " rel='$rel'";
+	} else {
+		$link_html .= " rel=\"$rel\"";
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	}
 
 	return "<a $link_html>";
@@ -4903,6 +4946,7 @@ function wp_pre_kses_less_than_callback( $matches ) {
 }
 
 /**
+<<<<<<< HEAD
  * Remove non-allowable HTML from parsed block attribute values when filtering
  * in the post context.
  *
@@ -4928,6 +4972,8 @@ function wp_pre_kses_block_attributes( $string, $allowed_html, $allowed_protocol
 }
 
 /**
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
  * WordPress implementation of PHP sprintf() with filters.
  *
  * @since 2.5.0

@@ -263,10 +263,17 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 		*  @type string 'author'
 		*  @type string 'post-date'
 		*  @type string 'comments'
+<<<<<<< HEAD
 		*  @type string 'sticky'
 		* }
 		*/
 		$post_meta = apply_filters(
+=======
+		*  @type string  'sticky'
+		* }
+		*/
+		$post_meta                 = apply_filters(
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 			'twentytwenty_post_meta_location_single_top',
 			array(
 				'author',
@@ -275,7 +282,10 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 				'sticky',
 			)
 		);
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 		$post_meta_wrapper_classes = ' post-meta-single post-meta-single-top';
 
 	} elseif ( 'single-bottom' === $location ) {
@@ -291,13 +301,20 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 		*   @type string 'tags'
 		* }
 		*/
+<<<<<<< HEAD
 		$post_meta = apply_filters(
+=======
+		$post_meta                 = apply_filters(
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 			'twentytwenty_post_meta_location_single_bottom',
 			array(
 				'tags',
 			)
 		);
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 		$post_meta_wrapper_classes = ' post-meta-single post-meta-single-bottom';
 
 	}
@@ -328,6 +345,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 				 * Allow output of additional post meta info to be added by child themes and plugins.
 				 *
 				 * @since 1.0.0
+<<<<<<< HEAD
 				 * @since Twenty Twenty 1.1 Added the `$post_meta` and `$location` parameters.
 				 *
 				 * @param int    $post_id   Post ID.
@@ -336,6 +354,12 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 				 *                          Accepts 'single-top' or 'single-bottom'.
 				 */
 				do_action( 'twentytwenty_start_of_post_meta_list', $post_id, $post_meta, $location );
+=======
+				 *
+				 * @param int   $post_ID Post ID.
+				 */
+				do_action( 'twentytwenty_start_of_post_meta_list', $post_id );
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 
 				// Author.
 				if ( in_array( 'author', $post_meta, true ) ) {
@@ -455,6 +479,7 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 				 * Allow output of additional post meta info to be added by child themes and plugins.
 				 *
 				 * @since 1.0.0
+<<<<<<< HEAD
 				 * @since Twenty Twenty 1.1 Added the `$post_meta` and `$location` parameters.
 				 *
 				 * @param int    $post_id   Post ID.
@@ -463,6 +488,12 @@ function twentytwenty_get_post_meta( $post_id = null, $location = 'single-top' )
 				 *                          Accepts 'single-top' or 'single-bottom'.
 				 */
 				do_action( 'twentytwenty_end_of_post_meta_list', $post_id, $post_meta, $location );
+=======
+				 *
+				 * @param int   $post_ID Post ID.
+				 */
+				do_action( 'twentytwenty_end_of_post_meta_list', $post_id );
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 
 				?>
 

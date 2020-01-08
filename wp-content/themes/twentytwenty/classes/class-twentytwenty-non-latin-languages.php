@@ -49,6 +49,12 @@ if ( ! class_exists( 'TwentyTwenty_Non_Latin_Languages' ) ) {
 					// Chinese Traditional (Taiwan) - Noto Sans TC.
 					'zh-TW' => array( '\'PingFang TC\'', '\'Helvetica Neue\'', '\'Microsoft YaHei New\'', '\'STHeiti Light\'', 'sans-serif' ),
 
+<<<<<<< HEAD
+=======
+					// Chinese Traditional (Taiwan) - Noto Sans TC.
+					'zh-TW' => array( '\'PingFang TC\'', '\'Helvetica Neue\'', '\'Microsoft YaHei New\'', '\'STHeiti Light\'', 'sans-serif' ),
+
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 					// Chinese (Hong Kong) - Noto Sans HK.
 					'zh-HK' => array( '\'PingFang HK\'', '\'Helvetica Neue\'', '\'Microsoft YaHei New\'', '\'STHeiti Light\'', 'sans-serif' ),
 

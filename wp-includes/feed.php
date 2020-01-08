@@ -649,21 +649,34 @@ function self_link() {
 }
 
 /**
+<<<<<<< HEAD
  * Get the UTC time of the most recently modified post from WP_Query.
  *
  * If viewing a comment feed, the time of the most recently modified
+=======
+ * Get the timestamp of the most recently modified post from WP_Query.
+ *
+ * If viewing a comment feed, the timestamp of the most recently modified
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
  * comment will be returned.
  *
  * @global WP_Query $wp_query WordPress Query object.
  *
  * @since 5.2.0
  *
+<<<<<<< HEAD
  * @param string $format Date format string to return the time in.
  * @return string|false The time in requested format, or false on failure.
+=======
+ * @param string $format Format of the timestamp to return, passed to mysql2date.
+ *
+ * @return string The timestamp.
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
  */
 function get_feed_build_date( $format ) {
 	global $wp_query;
 
+<<<<<<< HEAD
 	$datetime          = false;
 	$max_modified_time = false;
 	$utc               = new DateTimeZone( 'UTC' );
@@ -693,15 +706,41 @@ function get_feed_build_date( $format ) {
 	if ( false !== $datetime ) {
 		$max_modified_time = $datetime->format( $format );
 	}
+=======
+	if ( empty( $wp_query ) || ! $wp_query->have_posts() ) {
+		// Fallback to last time any post was modified or published.
+		return get_lastpostmodified( 'GMT' );
+	}
+
+	// Extract the post modified times from the posts.
+	$modified_times = wp_list_pluck( $wp_query->posts, 'post_modified_gmt' );
+
+	// If this is a comment feed, check those objects too.
+	if ( $wp_query->is_comment_feed() && $wp_query->comment_count ) {
+		// Extract the comment modified times from the comments.
+		$comment_times = wp_list_pluck( $wp_query->comments, 'comment_date_gmt' );
+
+		// Add the comment times to the post times for comparison.
+		$modified_times = array_merge( $modified_times, $comment_times );
+	}
+
+	// Determine the maximum modified time.
+	$max_modified_time = mysql2date( $format, max( $modified_times ), false );
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 
 	/**
 	 * Filters the date the last post or comment in the query was modified.
 	 *
 	 * @since 5.2.0
 	 *
+<<<<<<< HEAD
 	 * @param string|false $max_modified_time Date the last post or comment was modified in the query, in UTC.
 	 *                                        False on failure.
 	 * @param string       $format            The date format requested in get_feed_build_date().
+=======
+	 * @param string $max_modified_time Date the last post or comment was modified in the query.
+	 * @param string $format            The date format requested in get_feed_build_date.
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	 */
 	return apply_filters( 'get_feed_build_date', $max_modified_time, $format );
 }

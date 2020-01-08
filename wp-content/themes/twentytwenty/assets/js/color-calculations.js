@@ -38,7 +38,11 @@ _twentyTwentyColor.prototype.setAccentColorsArray = function() {
 		minSaturation = 65,
 		maxSaturation = 100,
 		minLightness = 30,
+<<<<<<< HEAD
 		maxLightness = 80,
+=======
+		maxLighness = 80,
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 		stepSaturation = 2,
 		stepLightness = 2,
 		pushColor = function() {
@@ -86,7 +90,11 @@ _twentyTwentyColor.prototype.setAccentColorsArray = function() {
 
 	// We're using `for` loops here because they perform marginally better than other loops.
 	for ( s = minSaturation; s <= maxSaturation; s += stepSaturation ) {
+<<<<<<< HEAD
 		for ( l = minLightness; l <= maxLightness; l += stepLightness ) {
+=======
+		for ( l = minLightness; l <= maxLighness; l += stepLightness ) {
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 			pushColor( s, l );
 		}
 	}
@@ -96,7 +104,11 @@ _twentyTwentyColor.prototype.setAccentColorsArray = function() {
 		return 7 <= color.contrastBackground;
 	} );
 
+<<<<<<< HEAD
 	// If we have AAA-compliant colors, always prefer them.
+=======
+	// If we have AAA-compliant colors, alpways prefer them.
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	if ( aaa.length ) {
 		this.accentColorsArray = aaa;
 	}

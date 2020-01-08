@@ -758,7 +758,11 @@ endif; //!IS_PROFILE_PAGE
 					}
 
 					if ( $value ) {
+<<<<<<< HEAD
 						$output .= $cap;
+=======
+						$output .= $value;
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 					} else {
 						/* translators: %s: Capability name. */
 						$output .= sprintf( __( 'Denied: %s' ), $cap );

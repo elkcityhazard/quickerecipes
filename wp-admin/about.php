@@ -48,6 +48,7 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 			</nav>
 		</div>
 
+<<<<<<< HEAD
 		<div class="about__section changelog">
 			<div class="column">
 				<h2><?php _e( 'Maintenance and Security Releases' ); ?></h2>
@@ -106,6 +107,8 @@ include( ABSPATH . 'wp-admin/admin-header.php' );
 
 		<hr />
 
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 		<div class="about__section is-feature">
 			<p>
 				<?php _e( '5.3 expands and refines the block editor introduced in WordPress 5.0 with a new block, more intuitive interactions, and improved accessibility. New features in the editor increase design freedoms, provide additional layout options and style variations to allow designers complete control over the look of a site. This release also introduces the Twenty Twenty theme giving the user more design flexibility and integration with the block editor. Creating beautiful web pages and advanced layouts has never been easier.' ); ?>

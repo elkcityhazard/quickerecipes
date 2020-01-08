@@ -25,7 +25,11 @@
 								_x( 'Y', 'copyright date format', 'twentytwenty' )
 							);
 							?>
+<<<<<<< HEAD
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+=======
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php echo bloginfo( 'name' ); ?></a>
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 						</p><!-- .footer-copyright -->
 
 						<p class="powered-by-wordpress">

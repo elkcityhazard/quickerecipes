@@ -142,7 +142,11 @@ class ParagonIE_Sodium_Core32_Poly1305_State extends ParagonIE_Sodium_Core32_Uti
             }
 
             $this->blocks(
+<<<<<<< HEAD
                 self::intArrayToString($this->buffer),
+=======
+                static::intArrayToString($this->buffer),
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
                 ParagonIE_Sodium_Core32_Poly1305::BLOCK_SIZE
             );
             $this->leftover = 0;
@@ -346,7 +350,11 @@ class ParagonIE_Sodium_Core32_Poly1305_State extends ParagonIE_Sodium_Core32_Uti
             $this->final = true;
             $this->blocks(
                 self::substr(
+<<<<<<< HEAD
                     self::intArrayToString($this->buffer),
+=======
+                    static::intArrayToString($this->buffer),
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
                     0,
                     ParagonIE_Sodium_Core32_Poly1305::BLOCK_SIZE
                 ),

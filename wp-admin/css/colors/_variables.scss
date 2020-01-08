@@ -18,9 +18,14 @@ $link: #0073aa !default;
 $link-focus: lighten( $link, 10% ) !default;
 
 $button-color: $highlight-color !default;
+<<<<<<< HEAD
 $button-text-color: $text-color !default;
 
 $form-checked: #7e8993 !default;
+=======
+$form-checked: $highlight-color !default;
+
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 
 // admin menu & admin-bar
 

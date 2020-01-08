@@ -335,6 +335,7 @@ function wp_maybe_decline_date( $date ) {
 		$months          = $wp_locale->month;
 		$months_genitive = $wp_locale->month_genitive;
 
+<<<<<<< HEAD
 		/*
 		 * Match a format like 'j F Y' or 'j. F' (day of the month, followed by month name)
 		 * and decline the month.
@@ -346,11 +347,23 @@ function wp_maybe_decline_date( $date ) {
 
 			foreach ( $months_genitive as $key => $month ) {
 				$months_genitive[ $key ] = ' ' . $month;
+=======
+		// Match a format like 'j F Y' or 'j. F'
+		if ( preg_match( '#^\d{1,2}\.? [^\d ]+#u', $date ) ) {
+
+			foreach ( $months as $key => $month ) {
+				$months[ $key ] = '# ' . $month . '( |$)#u';
+			}
+
+			foreach ( $months_genitive as $key => $month ) {
+				$months_genitive[ $key ] = ' ' . $month . '$1';
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 			}
 
 			$date = preg_replace( $months, $months_genitive, $date );
 		}
 
+<<<<<<< HEAD
 		/*
 		 * Match a format like 'F jS' or 'F j' (month name, followed by day with an optional ordinal suffix)
 		 * and change it to declined 'j F'.
@@ -358,6 +371,12 @@ function wp_maybe_decline_date( $date ) {
 		if ( preg_match( '#\b[^\d ]+ \d{1,2}(st|nd|rd|th)?\b#u', trim( $date ) ) ) {
 			foreach ( $months as $key => $month ) {
 				$months[ $key ] = '#\b' . preg_quote( $month, '#' ) . ' (\d{1,2})(st|nd|rd|th)?\b#u';
+=======
+		// Match a format like 'F jS' or 'F j' and change it to 'j F'
+		if ( preg_match( '#^[^\d ]+ \d{1,2}(st|nd|rd|th)? #u', trim( $date ) ) ) {
+			foreach ( $months as $key => $month ) {
+				$months[ $key ] = '#' . $month . ' (\d{1,2})(st|nd|rd|th)?#u';
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 			}
 
 			foreach ( $months_genitive as $key => $month ) {
@@ -2410,12 +2429,18 @@ function _wp_upload_dir( $time = null ) {
 function wp_unique_filename( $dir, $filename, $unique_filename_callback = null ) {
 	// Sanitize the file name before we begin processing.
 	$filename = sanitize_file_name( $filename );
+<<<<<<< HEAD
 	$ext2     = null;
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 
 	// Separate the filename into a name and extension.
 	$ext  = pathinfo( $filename, PATHINFO_EXTENSION );
 	$name = pathinfo( $filename, PATHINFO_BASENAME );
+<<<<<<< HEAD
 
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	if ( $ext ) {
 		$ext = '.' . $ext;
 	}
@@ -2433,6 +2458,7 @@ function wp_unique_filename( $dir, $filename, $unique_filename_callback = null )
 		$filename = call_user_func( $unique_filename_callback, $dir, $name, $ext );
 	} else {
 		$number = '';
+<<<<<<< HEAD
 		$fname  = pathinfo( $filename, PATHINFO_FILENAME );
 
 		// Always append a number to file names that can potentially match image sub-size file names.
@@ -2442,6 +2468,8 @@ function wp_unique_filename( $dir, $filename, $unique_filename_callback = null )
 			// At this point the file name may not be unique. This is tested below and the $number is incremented.
 			$filename = str_replace( "{$fname}{$ext}", "{$fname}-{$number}{$ext}", $filename );
 		}
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 
 		// Change '.ext' to lower case.
 		if ( $ext && strtolower( $ext ) != $ext ) {
@@ -2449,6 +2477,7 @@ function wp_unique_filename( $dir, $filename, $unique_filename_callback = null )
 			$filename2 = preg_replace( '|' . preg_quote( $ext ) . '$|', $ext2, $filename );
 
 			// Check for both lower and upper case extension or image sub-sizes may be overwritten.
+<<<<<<< HEAD
 			while ( file_exists( $dir . "/{$filename}" ) || file_exists( $dir . "/{$filename2}" ) ) {
 				$new_number = (int) $number + 1;
 				$filename   = str_replace( array( "-{$number}{$ext}", "{$number}{$ext}" ), "-{$new_number}{$ext}", $filename );
@@ -2514,10 +2543,45 @@ function wp_unique_filename( $dir, $filename, $unique_filename_callback = null )
 	 * @param string        $dir                      Directory path.
 	 * @param callable|null $unique_filename_callback Callback function that generates the unique file name.
 	 */
+=======
+			while ( file_exists( $dir . "/$filename" ) || file_exists( $dir . "/$filename2" ) ) {
+				$new_number = (int) $number + 1;
+				$filename   = str_replace( array( "-$number$ext", "$number$ext" ), "-$new_number$ext", $filename );
+				$filename2  = str_replace( array( "-$number$ext2", "$number$ext2" ), "-$new_number$ext2", $filename2 );
+				$number     = $new_number;
+			}
+
+			/**
+			 * Filters the result when generating a unique file name.
+			 *
+			 * @since 4.5.0
+			 *
+			 * @param string        $filename                 Unique file name.
+			 * @param string        $ext                      File extension, eg. ".png".
+			 * @param string        $dir                      Directory path.
+			 * @param callable|null $unique_filename_callback Callback function that generates the unique file name.
+			 */
+			return apply_filters( 'wp_unique_filename', $filename2, $ext, $dir, $unique_filename_callback );
+		}
+
+		while ( file_exists( $dir . "/$filename" ) ) {
+			$new_number = (int) $number + 1;
+			if ( '' == "$number$ext" ) {
+				$filename = "$filename-" . $new_number;
+			} else {
+				$filename = str_replace( array( "-$number$ext", "$number$ext" ), '-' . $new_number . $ext, $filename );
+			}
+			$number = $new_number;
+		}
+	}
+
+	/** This filter is documented in wp-includes/functions.php */
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 	return apply_filters( 'wp_unique_filename', $filename, $ext, $dir, $unique_filename_callback );
 }
 
 /**
+<<<<<<< HEAD
  * Helper function to check if a file name could match an existing image sub-size file name.
  *
  * @since 5.3.1
@@ -2552,6 +2616,8 @@ function _wp_check_existing_file_names( $filename, $files ) {
 }
 
 /**
+=======
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
  * Create a file in the upload folder with given content.
  *
  * If there is an error, then the key 'error' will exist with the error message.

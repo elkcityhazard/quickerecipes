@@ -1388,9 +1388,14 @@ function add_submenu_page( $parent_slug, $page_title, $menu_title, $capability, 
 
 		$submenu[ $parent_slug ][] = $new_sub_menu;
 	} else {
+<<<<<<< HEAD
 		// Append the submenu if the parent item is not present in the submenu,
 		// or if position is equal or higher than the number of items in the array.
 		if ( ! isset( $submenu[ $parent_slug ] ) || $position >= count( $submenu[ $parent_slug ] ) ) {
+=======
+		// If position is equal or higher than the number of items in the array, append the submenu.
+		if ( $position >= count( $submenu[ $parent_slug ] ) ) {
+>>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 			$submenu[ $parent_slug ][] = $new_sub_menu;
 		} else {
 			// Test for a negative position.
