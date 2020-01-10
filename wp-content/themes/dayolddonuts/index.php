@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php /*
 Template Name: Default  Template
 */
@@ -18,18 +17,6 @@ Template Name: Default  Template
         <?php the_post_thumbnail(); ?>
     </a>
 <?php endif; ?>
-=======
-<?php get_header(); ?>
-<?php get_sidebar(); ?>
-<main id="main-content">
-  <div class="post-block-container">
-<h1><?php bloginfo( 'name' ); ?></h1>
-<h2><?php bloginfo( 'description' ); ?></h2>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-    <article <?php post_class();?> >
-  <h1><?php the_title(); ?></h1>
->>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
     <?php the_content(); ?>
     <footer class="author-byline">
       <p>
@@ -75,13 +62,8 @@ Template Name: Default  Template
 							<?php
 						endif;
 						?>
-<<<<<<< HEAD
 </main>
 </div>
-=======
-          </div>
-</main>
->>>>>>> e5a9fccff1110b8772de17afbdf40f53dd172b57
 <?php get_footer(); ?>
 </body>
 </html>
